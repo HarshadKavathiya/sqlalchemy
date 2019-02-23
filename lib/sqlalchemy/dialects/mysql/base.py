@@ -2543,10 +2543,8 @@ class MySQLDialect(default.DefaultDialect):
         # preserves the original table/schema casing, but SHOW CREATE
         # TABLE does not.   this problem is not in lower_case_table_names=1,
         # but use case-insensitive matching for these two modes in any case.
-
         if self._casing in (1, 2):
-            def lower(s):
-                return s.lower()
+            lower = str.lower
         else:
             # if on case sensitive, there can be two tables referenced
             # with the same name different casing, so we need to use

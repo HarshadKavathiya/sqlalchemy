@@ -14,12 +14,9 @@ they originate from :mod:`sqlalchemy.types` or from the local dialect::
 
     from sqlalchemy.dialects.oracle import \
                 BFILE, BLOB, CHAR, CLOB, DATE, \
-                DOUBLE_PRECISION, FLOAT, INTERVAL, LONG, NCLOB, NCHAR, \
+                DOUBLE_PRECISION, FLOAT, INTERVAL, LONG, NCLOB, \
                 NUMBER, NVARCHAR, NVARCHAR2, RAW, TIMESTAMP, VARCHAR, \
                 VARCHAR2
-
-.. versionadded:: 1.2.19 Added :class:`.NCHAR` to the list of datatypes
-   exported by the Oracle dialect.
 
 Types which are specific to Oracle, or have Oracle-specific
 construction arguments, are as follows:

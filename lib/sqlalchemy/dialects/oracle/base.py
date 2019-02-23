@@ -364,7 +364,6 @@ from ...types import CHAR
 from ...types import CLOB
 from ...types import FLOAT
 from ...types import INTEGER
-from ...types import NCHAR
 from ...types import NVARCHAR
 from ...types import TIMESTAMP
 from ...types import VARCHAR
@@ -524,7 +523,6 @@ ischema_names = {
     "VARCHAR2": VARCHAR,
     "NVARCHAR2": NVARCHAR,
     "CHAR": CHAR,
-    "NCHAR": NCHAR,
     "DATE": DATE,
     "NUMBER": NUMBER,
     "BLOB": BLOB,
@@ -1516,7 +1514,7 @@ class OracleDialect(default.DefaultDialect):
             elif coltype == "FLOAT":
                 # TODO: support "precision" here as "binary_precision"
                 coltype = FLOAT()
-            elif coltype in ("VARCHAR2", "NVARCHAR2", "CHAR", "NCHAR"):
+            elif coltype in ("VARCHAR2", "NVARCHAR2", "CHAR"):
                 coltype = self.ischema_names.get(coltype)(length)
             elif "WITH TIME ZONE" in coltype:
                 coltype = TIMESTAMP(timezone=True)

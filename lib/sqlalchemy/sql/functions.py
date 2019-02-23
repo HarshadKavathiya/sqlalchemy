@@ -301,7 +301,7 @@ class FunctionElement(Executable, ColumnElement, FromClause):
 
         """
 
-        return Alias._construct(self, name)
+        return Alias(self, name)
 
     def select(self):
         """Produce a :func:`~.expression.select` construct
